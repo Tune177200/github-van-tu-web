@@ -3,10 +3,11 @@
     Template Name: Trang chủ
 */
 get_header();
-echo 'đây là trang chủ';
-echo get_stylesheet_directory();
-echo get_template_directory();
-
-echo get_template_directory() .'/languages';
+?>
+    <section class="home-banner">
+        <img src="http://localhost/webcat/wp-content/uploads/2022/09/bn-thiet-ke-web.jpg">
+    </section>
+    
+<?php
 
 get_footer();

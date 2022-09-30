@@ -83,3 +83,20 @@
       wp_nav_menu( $menu );
     }
   }
+
+  /** hàm tạo phân trang */
+  if(!function_exists('vantu_panigation')){
+    function vantu_panigation(){
+      if($GLOBALS['wp_query']->max_num_pages <2){
+        return '';
+      } ?>
+      <nav class="pagination" role="navigation">
+        <?php if(get_next_posts_link()) : ?>
+          <div class="prev"><?php next_post_link(__('Older Posts', 'vantu')); ?></div>
+        <?php endif; ?>
+        <?php if(get_previous_post_link()) : ?>
+          <div class="next"><?php previous_posts_link(__('Newest Posts', 'vantu')); ?></div>
+        <?php endif; ?>  
+      </nav>
+    <?php }
+  }
